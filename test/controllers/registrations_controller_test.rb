@@ -7,7 +7,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should respond to create post" do
-    post registrations_path
-    assert_response :success
+    post registrations_path, params: {:user => { :email => 'foo@bar.com', :password => 'abc' }}
+    assert_response :redirect
   end
 end
