@@ -2,12 +2,12 @@ require "test_helper"
 
 class LoginsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get logins_new_url
+    get new_login_path
     assert_response :success
   end
 
-  test "should get create" do
-    get logins_create_url
+  test "should respond to create post" do
+    post logins_path
     assert_response :success
   end
 end
