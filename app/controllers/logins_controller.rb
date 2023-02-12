@@ -7,7 +7,7 @@ class LoginsController < ApplicationController
     @user = User.find_by(login_params)
 
     if @user
-      redirect_to dashboards_index_path
+      redirect_to dashboards_path
     else
       flash[:alert] = "Could not log you in. Please check your email and password."
       render :new, status: :unprocessable_entity
