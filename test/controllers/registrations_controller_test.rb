@@ -2,12 +2,12 @@ require "test_helper"
 
 class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get registrations_new_url
+    get new_registration_path
     assert_response :success
   end
 
-  test "should get create" do
-    get registrations_create_url
+  test "should respond to create post" do
+    post registrations_path
     assert_response :success
   end
 end
