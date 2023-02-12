@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to "/"
+      redirect_to new_login_path
     else
       flash[:alert] = "Could not create account: email and password required."
       render :new, status: :unprocessable_entity

@@ -1,2 +1,14 @@
-<h1>Logins#new</h1>
-<p>Find me in app/views/logins/new.html.erb</p>
+<h1>Welcome Back! Log In</h1>
+<%= form_with model: @user, url: logins_path do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.submit "Log In" %>
+  </div>
+<% end %>
