@@ -1,8 +1,8 @@
 require "test_helper"
 
 class DashboardsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+  test "should redirect if not logged in" do
     get dashboards_path
-    assert_response :success
+    assert_response :redirect
   end
 end
