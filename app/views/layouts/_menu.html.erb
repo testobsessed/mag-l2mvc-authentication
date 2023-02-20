@@ -1,1 +1,8 @@
-<div>Rendered from Menu</div>
+<div>
+  <% if @user.nil? %>
+  <%= link_to "Login", new_login_path %>
+    <% else %>
+    <div><%= link_to "Draft New Post", new_post_path %></div>
+    <div><%= link_to "Logout" %></div>
+  <% end %>
+</div>
