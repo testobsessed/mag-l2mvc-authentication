@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Authentication</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+<head>
+  <title>Authentication</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body class="container mx-auto mt-4 px-4 bg-blue-400">
-    <div><%= notice %></div>
-    <div><%= alert %></div>
-    <div class="bg-white p-4">
-      <span class="font-mono px-10">
+<body class="container mx-auto mt-4 px-4 bg-blue-400">
+<%# flash styling thanks to: https://stackoverflow.com/questions/73129428/flash-messages-with-stimulus-js-and-animate-css %>
+<% flash.each do |message_type, message| %>
+  <div data-controller="flash" class="absolute left-1/2 transform -translate-x-1/2">
+    <div class="mt-5 mb-15 sm:mx-auto sm:w-full sm:max-w-md px-2">
+      <div class="flex center-justify rounded-md bg-blue-50 p-4 text-sm font-medium">
+        <%= message %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<div class="bg-white p-4">
+      <span class="px-10">
       <%= image_tag ("dalle-typewriter-sm.jpg") %>
         Blog on Rails</span>
-    </div>
-    <div class="grid grid-cols-5 gap-3">
-      <div class="bg-gray-200 p-4">
-        <%= render "layouts/menu" %>
-      </div>
-      <div class="bg-white col-span-4 p-4">
-        <%= yield %>
-      </div>
-    </div>
-  </body>
+</div>
+<div class="grid grid-cols-5 gap-3">
+  <div class="bg-gray-200 p-4">
+    <%= render "layouts/menu" %>
+  </div>
+  <div class="bg-white col-span-4 p-4">
+    <%= yield %>
+  </div>
+</div>
+</body>
 </html>
