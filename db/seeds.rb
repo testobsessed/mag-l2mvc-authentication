@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 placeholder = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" * 10
-user1 = User.create({ email: "antoine@prince.com", password: "password"})
-user2 = User.create({ email: "aa@milne.com", password: "password"})
+user1 = User.create({ name: "Antoine de Saint-Exupéry", email: "antoine@prince.com", password: "password"})
+user2 = User.create({ name: "A.A. Milne", email: "aa@milne.com", password: "password"})
 Post.create({title: "It is an Elephant", body: placeholder, user_id: user1.id})
 Post.create({title: "About B 612", body: placeholder, user_id: user1.id})
 Post.create({title: "The Catastrophe of the Boabab", body: placeholder, user_id: user1.id})
