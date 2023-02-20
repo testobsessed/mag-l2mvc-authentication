@@ -22,10 +22,18 @@
     </div>
   </div>
 <% end %>
-<div class="bg-white p-4">
-      <span class="px-10">
+<div class="bg-white p-4 grid grid-cols-2 items-bottom">
+  <div class="flex">
+    <div class="mt-auto p-2">
       <%= image_tag ("dalle-typewriter-sm.jpg") %>
-        Blog on Rails</span>
+    </div>
+    <div class="mt-auto p-4 text-2xl">
+      Blog on Rails
+    </div>
+  </div>
+  <div class="text-right">
+    <%= "Logged in as #{@user.name}" if authenticated? %>
+  </div>
 </div>
 <div class="grid grid-cols-5 gap-3">
   <div class="bg-gray-200 p-4">

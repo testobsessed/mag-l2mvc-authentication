@@ -1,6 +1,9 @@
 require 'redcarpet'
 
 module ApplicationHelper
+  def authenticated?
+    !(@user.nil? || @user.id.nil?)
+  end
   def markdown(text)
     options = {
       filter_html:     true,
