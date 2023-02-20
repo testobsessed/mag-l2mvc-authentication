@@ -1,10 +1,11 @@
 <div>
   <% if @user.nil? || @user.id.nil? %>
+    <div><%= link_to "Home", root_path %></div>
     <div><%= link_to "Login", new_login_path %></div>
     <div><%= link_to "Register", new_registration_path %></div>
   <% else %>
     <div><%= link_to "Dashboard", dashboards_path %></div>
-    <div><%= link_to "Draft New Post", new_post_path %></div>
+    <div><%= link_to "Write", new_post_path %></div>
     <div><%= link_to "Logout", logout_path %></div>
   <% end %>
 </div>
