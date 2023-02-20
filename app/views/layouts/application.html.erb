@@ -11,7 +11,7 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<body class="container mx-auto mt-4 px-4 bg-blue-400">
+<body class="container mx-auto mt-4 px-4 bg-blue-400 font-mono">
 <%# flash styling thanks to: https://stackoverflow.com/questions/73129428/flash-messages-with-stimulus-js-and-animate-css %>
 <% flash.each do |message_type, message| %>
   <div data-controller="flash" class="absolute left-1/2 transform -translate-x-1/2">
