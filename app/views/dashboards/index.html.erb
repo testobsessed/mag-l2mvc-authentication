@@ -1,9 +1,11 @@
-<h1>Latest Posts</h1>
+<div class="text-xl">Latest Posts</div>
 <% @posts.each do |post| %>
-  <div>
-    <%= link_to post.title, post_path(post)%>
-    <%= post.user.email %>
-    <%= "Edit" if post.user == @user %>
+  <div class="m-2 p-2">
+    <%= link_to post.title, post_path(post) %>,
+    <span class="italic"><%= post.user.name %></span>
+    <% if post.user == @user %>
+      <span class="border-2 border-blue-500 p-1 bg-blue-50 rounded-md"><%= link_to "edit", edit_post_path(post) %></span>
+    <% end %>
   </div>
 <% end %>
 <%#= render @posts %>
