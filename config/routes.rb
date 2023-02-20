@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'dashboards#index'
   resources :posts
   get 'dashboards/index', as: :dashboards
   resources :logins, only: [:new, :create]

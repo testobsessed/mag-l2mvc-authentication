@@ -11,9 +11,21 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container mx-auto mt-16 px-5 flex">
+  <body class="container mx-auto mt-4 px-4 bg-blue-400">
     <div><%= notice %></div>
     <div><%= alert %></div>
-    <%= yield %>
+    <div class="bg-white p-4">
+      <span class="font-mono px-10">
+      <%= image_tag ("dalle-typewriter-sm.jpg") %>
+        Blog on Rails</span>
+    </div>
+    <div class="grid grid-cols-5 gap-3">
+      <div class="bg-gray-200 p-4">
+        <%= render "layouts/menu" %>
+      </div>
+      <div class="bg-white col-span-4 p-4">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

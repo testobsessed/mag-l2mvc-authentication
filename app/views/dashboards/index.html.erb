@@ -1,1 +1,6 @@
-<h1>Welcome!</h1>
+<h1>Latest Posts</h1>
+<% @posts.each do |post| %>
+  <div><%= post.title %>
+  <%= post.user.email %></div>
+<% end %>
+<%#= render @posts %>
