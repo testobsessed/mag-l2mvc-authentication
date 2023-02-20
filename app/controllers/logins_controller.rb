@@ -5,6 +5,12 @@ class LoginsController < ApplicationController
     @user = User.new
   end
 
+  def logout
+    reset_session
+    logged_out
+    redirect_to root_path, notice: "You are now logged out."
+  end
+
   def create
     @user = User.find_by(login_params)
 

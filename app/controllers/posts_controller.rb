@@ -65,10 +65,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def require_login
-    @user = User.find_by(id: session[:user_id])
-    redirect_to new_login_path unless @user
-  end
+
 
   # Only allow a list of trusted parameters through.
   def post_params
