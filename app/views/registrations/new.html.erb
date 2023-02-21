@@ -1,18 +1,19 @@
-<h1>Sign Up</h1>
+<div class="text-xl">Register for a free account!</div>
+An account lets you write your own blog posts.
 <%= form_with model: @user, url: registrations_path do |form| %>
-  <div>
+  <div class="my-5">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-  <div>
+  <div class="my-5">
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
-  <div>
+  <div class="my-5">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
-  <div>
+  <div class="my-5 w-fit px-2 border-2 border-blue-500 p-1 bg-blue-50 rounded-md">
     <%= form.submit "Sign Up" %>
   </div>
 <% end %>

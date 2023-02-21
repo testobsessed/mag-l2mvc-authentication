@@ -2,12 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+@layer base {
+    a:hover {
+        @apply text-blue-900;
+        @apply font-bold;
+    }
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
+    h1, h2 {
+        @apply text-lg;
+        @apply font-bold;
+        margin-top: 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        margin-left: 25px;
+        @apply list-disc;
+    }
 }
-
-*/

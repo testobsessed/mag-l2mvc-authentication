@@ -1,20 +1,14 @@
 <h1>Welcome Back! Log In</h1>
 <%= form_with model: @user, url: logins_path do |form| %>
-  <div>
+  <div class="my-5">
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
-  <div>
+  <div class="my-5">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
-  <div>
+  <div class="my-5 w-fit px-2 border-2 border-blue-500 p-1 bg-blue-50 rounded-md">
     <%= form.submit "Log In" %>
   </div>
 <% end %>
-<div>
-  <span>
-    Don't have a login? You can
-    <%=link_to "create one for free!", new_registration_path %>
-  </span>
-</div>

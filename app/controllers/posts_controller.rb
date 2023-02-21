@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :require_login, only: %i[ new create edit update destroy ]
+  before_action :require_login, only: %i[ new create ]
+  before_action :require_authorization, only: %i[ edit update destroy ]
 
   # GET /posts or /posts.json
   def index
@@ -51,12 +52,9 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    title = @post.title
     @post.destroy
-
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to dashboards_path, notice: "Successfully destroyed '#{title}'"
   end
 
   private
@@ -66,7 +64,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-
+  def require_authorization
+    post = Post.find(params[:id])
+    redirect_to dashboards_path, notice: "Action not authorized." if @user.nil? || post.user_id != @user.id
+  end
 
   # Only allow a list of trusted parameters through.
   def post_params

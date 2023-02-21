@@ -1,10 +1,19 @@
-<div class="text-xl">Latest Posts</div>
+<div class="text-xl mb-8">Latest Posts</div>
 <% @posts.each do |post| %>
-  <div class="m-2 p-2">
-    <%= link_to post.title, post_path(post) %>,
-    <span class="italic"><%= post.user.name %></span>
+  <div class="h-12 m-2 flex">
+    <%= link_to post.title, post_path(post) %>,&nbsp;
+    <span class="italic">
+      <%= post.user.name %>
+    </span>
     <% if post.user == @user %>
-      <span class="border-2 border-blue-500 p-1 bg-blue-50 rounded-md"><%= link_to "edit", edit_post_path(post) %></span>
+      <div class="flex px-2">
+      <span class="flex text-xs items-center justify-center h-8 w-fit mr-2 border-2 border-blue-500 px-2 bg-blue-50 rounded-md">
+        <%= link_to "edit", edit_post_path(post), class: "hover:text-black hover:font-normal" %>
+      </span>
+      <span class="text-xs">
+        <%= button_to "delete", post, method: :delete, class: "px-2 h-8 border-2 border-blue-500 bg-blue-50 rounded-md" %>
+      </span>
+      </div>
     <% end %>
   </div>
 <% end %>
