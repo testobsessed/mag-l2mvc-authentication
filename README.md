@@ -1,6 +1,7 @@
 # README
 
 A few notes:
+* The base for this assignment is the authentication example, but I changed a lot
 * Provided seed data (`rails db:seed`). You can log in as `aa@milne.com` with password `password`.
 * Added Redcarpet to support authoring in Markdown (been wanting to try out that gem for a while and this ssemed like a good time).
 * Added Tailwind (and honestly went a little overboard on the styling) even though I know that wasn't part of the assignment
